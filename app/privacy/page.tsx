@@ -10,12 +10,11 @@ export default function PrivacyPage() {
       <section>
         <h2>Wie zijn wij?</h2>
         <p>
-          {legal.organiserName} organiseert {event.name}. Wij zijn verantwoordelijk voor de verwerking van de
+          {legal.organiserName}, een projectgroep studenten van Hogeschool Leiden, organiseert {event.name}. Wij zijn verantwoordelijk voor de verwerking van de
           persoonsgegevens die je via deze website aan ons geeft.
         </p>
         <ul className="mt-3">
-          <li>Adres: {legal.organiserAddress}</li>
-          <li>KvK: {legal.kvk}</li>
+          <li>Plaats: {legal.organiserCity}</li>
           <li>E-mail: {legal.privacyEmail}</li>
         </ul>
       </section>
@@ -47,14 +46,17 @@ export default function PrivacyPage() {
         <h2>Met wie delen we gegevens?</h2>
         <ul>
           <li>
-            <strong>[Tikkie / naam van je bank]</strong> verwerkt je betaling via de betaallink. Zij zijn zelf verantwoordelijk voor de betaalgegevens
+            <strong>Tikkie (ABN AMRO)</strong> verwerkt je betaling via de betaallink. Zij zijn zelf verantwoordelijk voor de betaalgegevens
             die je bij hen invoert.
           </li>
           <li>
             <strong>Supabase</strong> (database) en <strong>Vercel</strong> (hosting) slaan de inschrijfgegevens
-            namens ons op. [Controleer en vermeld de serverregio, bijv. EU (Frankfurt).]
+            namens ons op. Met deze partijen maken zij afspraken over de beveiliging van je gegevens.
           </li>
-          <li>[Eventueel: {event.goodCause} / de locatie, alleen indien nodig en vermeld wat er gedeeld wordt.]</li>
+          <li>
+            <strong>{event.location}</strong> krijgt alleen de teamnamen voor de indeling van de banen. Andere
+            gegevens delen we niet met de club of met {event.goodCause}.
+          </li>
         </ul>
       </section>
 

@@ -7,6 +7,8 @@ import {
   MAX_TEAMS,
   TOTAL_TEAM_CAPACITY,
   MIN_TEAMS,
+  PLAYERS_PER_TEAM,
+  PRICE_PER_PERSON_CENTS,
   PRICE_PER_TEAM_CENTS,
   TEAM_FIELDS,
   totalCents,
@@ -358,7 +360,9 @@ export function RegistrationForm() {
               <dd className="font-semibold tabular-nums">{teamCount}</dd>
             </div>
             <div className="flex justify-between gap-4">
-              <dt className="text-white/65">Prijs per team</dt>
+              <dt className="text-white/65">
+                Prijs per team ({PLAYERS_PER_TEAM} × {formatEuro(PRICE_PER_PERSON_CENTS)})
+              </dt>
               <dd className="font-semibold tabular-nums">{formatEuro(PRICE_PER_TEAM_CENTS)}</dd>
             </div>
             <div className="flex items-end justify-between gap-4 border-t border-white/15 pt-4">

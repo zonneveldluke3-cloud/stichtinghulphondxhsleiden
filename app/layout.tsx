@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: `${event.name} · ${event.dateShort}`,
     template: `%s · ${event.shortName}`,
   },
-  description: `${event.tagline} ${event.date} bij ${event.location}. Schrijf je team in voor €60 per team.`,
+  description: `${event.tagline} ${event.date} bij ${event.location}. Schrijf je team in voor €30 per persoon.`,
   openGraph: {
     title: event.name,
     description: event.tagline,

@@ -127,6 +127,10 @@ export default async function ConfirmationPage(props: PageProps<"/inschrijving/b
         </p>
       </div>
 
+      <p className="mx-auto mt-4 max-w-md text-sm text-ink/60">
+        Tip: maak een screenshot van deze pagina of bewaar de link, dan heb je je betaalcode altijd bij de hand.
+      </p>
+
       <div className="mt-8">
         <p className="font-semibold text-ink">Ken je nog meer mensen die willen meedoen?</p>
         <div className="mt-3 flex justify-center">

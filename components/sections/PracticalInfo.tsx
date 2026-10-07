@@ -1,5 +1,5 @@
 import { event } from "@/config/event";
-import { PRICE_PER_TEAM_CENTS } from "@/config/registration";
+import { PRICE_PER_PERSON_CENTS, PRICE_PER_TEAM_CENTS } from "@/config/registration";
 import { formatEuroShort } from "@/lib/format";
 import { Container, Eyebrow, SectionTitle } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -8,10 +8,10 @@ import { CalendarIcon, ClockIcon, EuroIcon, FlagIcon, PinIcon, UsersIcon } from 
 
 export function PracticalInfo() {
   const items = [
-    { icon: CalendarIcon, label: "Datum", value: event.date },
+    { icon: CalendarIcon, label: "Datum", value: event.date, sub: "Regent het? Dan kijken we samen met de club wat we doen" },
     { icon: PinIcon, label: "Locatie", value: event.location, sub: event.address, href: event.mapsUrl },
     { icon: ClockIcon, label: "Tijd", value: event.startTime, sub: `${event.afterParty} (eten en drinken via sponsors, nog niet rond)` },
-    { icon: EuroIcon, label: "Prijs", value: `${formatEuroShort(PRICE_PER_TEAM_CENTS)} per team` },
+    { icon: EuroIcon, label: "Prijs", value: `${formatEuroShort(PRICE_PER_PERSON_CENTS)} per persoon`, sub: `Dus ${formatEuroShort(PRICE_PER_TEAM_CENTS)} per team van 2` },
     { icon: UsersIcon, label: "Spelers per team", value: event.playersPerTeam },
     { icon: FlagIcon, label: "Inschrijven kan tot", value: event.registrationDeadline, sub: "Zolang er plek is" },
   ];

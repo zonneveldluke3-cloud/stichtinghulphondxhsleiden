@@ -7,8 +7,14 @@
  * waarden — een bedrag uit de browser wordt nooit vertrouwd.
  */
 
-/** Prijs per team in centen (6000 = €60,00). */
-export const PRICE_PER_TEAM_CENTS = 6000;
+/** Prijs per speler in centen (3000 = €30,00). */
+export const PRICE_PER_PERSON_CENTS = 3000;
+
+/** Aantal spelers per team. */
+export const PLAYERS_PER_TEAM = 2;
+
+/** Prijs per team in centen (2 × €30 = €60,00). */
+export const PRICE_PER_TEAM_CENTS = PRICE_PER_PERSON_CENTS * PLAYERS_PER_TEAM;
 
 export const CURRENCY = "EUR";
 

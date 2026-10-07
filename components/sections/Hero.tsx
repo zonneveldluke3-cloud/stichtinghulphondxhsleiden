@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { event } from "@/config/event";
-import { PRICE_PER_TEAM_CENTS } from "@/config/registration";
+import { PRICE_PER_PERSON_CENTS } from "@/config/registration";
 import { formatEuroShort } from "@/lib/format";
 import { Container } from "@/components/ui/Section";
 import { HeroScene } from "@/components/ui/HeroScene";
@@ -53,7 +53,7 @@ export function Hero() {
                 <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
               <p className="font-display text-2xl font-extrabold">
-                {formatEuroShort(PRICE_PER_TEAM_CENTS)} <span className="text-base font-semibold text-white/80">per team</span>
+                {formatEuroShort(PRICE_PER_PERSON_CENTS)} <span className="text-base font-semibold text-white/80">per persoon</span>
               </p>
             </div>
 

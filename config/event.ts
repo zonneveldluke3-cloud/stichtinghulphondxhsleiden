@@ -118,18 +118,17 @@ export const sponsors: Sponsor[] = [
 
 /** Gegevens voor de privacyverklaring en deelnamevoorwaarden. */
 export const legal = {
-  organiserName: "[Naam organisatie / projectgroep]",
-  organiserAddress: "[Adres]",
-  kvk: "[KvK-nummer, indien van toepassing]",
+  organiserName: "Kracht op 4 Poten",
+  organiserCity: "Laren",
   privacyEmail: "hulphond.studenthsleiden@outlook.com",
-  retentionPeriod: "[bijv. 3 maanden na afloop van het evenement]",
-  lastUpdated: "[datum]",
+  retentionPeriod: "uiterlijk 3 maanden na afloop van het toernooi verwijderen we je gegevens",
+  lastUpdated: "7 oktober 2026",
 } as const;
 
 export const faq = [
   {
     q: "Hoeveel kost deelname?",
-    a: "Deelname kost €60 per team. Na het inschrijven krijg je direct een betaallink (bijvoorbeeld een Tikkie) om het bedrag te betalen.",
+    a: "Deelname kost €30 per persoon. Een team bestaat uit 2 spelers, dus je betaalt €60 per team. Na het inschrijven krijg je direct een betaallink (bijvoorbeeld een Tikkie) om het bedrag te betalen.",
   },
   {
     q: "Hoeveel spelers mogen in een team?",
@@ -161,6 +160,14 @@ export const faq = [
   },
   {
     q: "Kan ik mijn inschrijving annuleren?",
-    a: "[Placeholder] Annuleren kan tot [datum] via een e-mail naar ons. Omdat de opbrengst naar het goede doel gaat, wordt het inschrijfgeld in principe niet terugbetaald. Je mag je plek wel overdragen aan een ander team. Zie ook de deelnamevoorwaarden.",
+    a: "Kun je toch niet? Mail ons zo snel mogelijk. Alle betalingen zijn definitief: omdat de opbrengst naar het goede doel gaat, betalen we het inschrijfgeld niet terug. Je mag je plek wel overdragen aan een ander team, geef dat dan even aan ons door. Zie ook de deelnamevoorwaarden.",
+  },
+  {
+    q: "Wat als het regent?",
+    a: "We spelen bij Padel Club Laren. Als het regent, kijken we samen met de club wat we gaan doen. We laten het je dan zo snel mogelijk per e-mail of telefoon weten.",
+  },
+  {
+    q: "Ik ben de link naar mijn bevestiging kwijt. Wat nu?",
+    a: "Geen probleem. Mail of bel ons met je naam en teamnaam, dan sturen we je de betaalgegevens opnieuw.",
   },
 ] as const;
