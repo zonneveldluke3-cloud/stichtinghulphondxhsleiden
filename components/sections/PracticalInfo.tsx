@@ -8,7 +8,7 @@ import { CalendarIcon, ClockIcon, EuroIcon, FlagIcon, PinIcon, UsersIcon } from 
 export function PracticalInfo() {
   const items = [
     { icon: CalendarIcon, label: "Datum", value: event.date },
-    { icon: PinIcon, label: "Locatie", value: event.location, sub: event.address },
+    { icon: PinIcon, label: "Locatie", value: event.location, sub: event.address, href: event.mapsUrl },
     { icon: ClockIcon, label: "Aanvang", value: event.startTime },
     { icon: EuroIcon, label: "Prijs", value: `${formatEuroShort(PRICE_PER_TEAM_CENTS)} per team` },
     { icon: UsersIcon, label: "Spelers per team", value: event.playersPerTeam },
@@ -24,7 +24,7 @@ export function PracticalInfo() {
         </Reveal>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map(({ icon: Icon, label, value, sub }, i) => (
+          {items.map(({ icon: Icon, label, value, sub, href }, i) => (
             <Reveal as="li" key={label} delay={(i % 3) * 80}>
               <div className="flex h-full items-start gap-4 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-ink/5">
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-court/10 text-court">
@@ -34,6 +34,16 @@ export function PracticalInfo() {
                   <p className="text-sm font-semibold uppercase tracking-wider text-ink/50">{label}</p>
                   <p className="mt-0.5 font-display text-xl font-bold leading-snug">{value}</p>
                   {sub && <p className="mt-0.5 text-sm text-ink/60">{sub}</p>}
+                  {href && (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-sm font-semibold text-court underline underline-offset-2 hover:text-ink"
+                    >
+                      Route plannen
+                    </a>
+                  )}
                 </div>
               </div>
             </Reveal>

@@ -1,7 +1,7 @@
 import { contact } from "@/config/event";
 import { Container, Eyebrow, SectionTitle } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { MailIcon, SocialIcon } from "@/components/ui/icons";
+import { MailIcon, PhoneIcon, SocialIcon } from "@/components/ui/icons";
 
 export function Contact() {
   return (
@@ -12,12 +12,20 @@ export function Contact() {
             <div>
               <Eyebrow light>Contact</Eyebrow>
               <SectionTitle>Vragen? Stuur ons een berichtje.</SectionTitle>
-              <a
-                href={`mailto:${contact.email}`}
-                className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-lg font-bold text-ink transition hover:bg-ball"
-              >
-                <MailIcon className="h-5 w-5" /> {contact.email}
-              </a>
+              <div className="mt-8 flex flex-col items-start gap-3">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="inline-flex max-w-full items-center gap-3 rounded-full bg-white px-6 py-3.5 font-bold text-ink transition hover:bg-ball sm:text-lg"
+                >
+                  <MailIcon className="h-5 w-5 shrink-0" /> <span className="break-all">{contact.email}</span>
+                </a>
+                <a
+                  href={contact.phoneHref}
+                  className="inline-flex items-center gap-3 rounded-full bg-white/10 px-6 py-3.5 font-bold text-white ring-1 ring-white/25 transition hover:bg-white/20 sm:text-lg"
+                >
+                  <PhoneIcon className="h-5 w-5" /> {contact.phone}
+                </a>
+              </div>
             </div>
             <ul className="flex flex-wrap gap-3 lg:justify-end">
               {contact.socials.map((s) => (

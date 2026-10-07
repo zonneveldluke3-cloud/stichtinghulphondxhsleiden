@@ -15,7 +15,8 @@ export const event = {
   date: "Vrijdag 30 oktober 2026",
   dateShort: "30 okt 2026",
   location: "Padel Club Laren",
-  address: "[Straat + huisnummer], Laren",
+  address: "Schuilkerkpad 2, 1251 SC Laren",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Padel+Club+Laren+Schuilkerkpad+2+1251+SC+Laren",
   startTime: "[Aanvangstijd, bijv. 16:00]",
   playersPerTeam: "2 spelers",
   registrationDeadline: "[Inschrijfdeadline, bijv. 23 oktober 2026]",
@@ -48,7 +49,9 @@ export const organisation = {
 } as const;
 
 export const contact = {
-  email: "[info@jouwdomein.nl]",
+  email: "hulphond.studenthsleiden@outlook.com",
+  phone: "06 30131167",
+  phoneHref: "tel:+31630131167",
   socials: [
     { name: "Instagram", href: "#", handle: "[@jouwaccount]" },
     { name: "LinkedIn", href: "#", handle: "[Jouw pagina]" },
@@ -56,12 +59,42 @@ export const contact = {
   ],
 } as const;
 
+/** Doneren zonder mee te doen. */
+export const donation = {
+  url: "https://tikkie.me/pay/k3va51u9kcooii8h66u7",
+  title: "Niet meespelen, wel steunen?",
+  text: "Ook zonder racket kun je Stichting Hulphond helpen. Elke euro gaat naar de opleiding van hulphonden.",
+  button: "Doneer nu",
+} as const;
+
+/**
+ * Sponsors. Voeg een bedrijf toe als { name, logo, url }.
+ * logo: zet het logobestand in /public/sponsors/ en vul bijv. "/sponsors/bedrijf.png" in (of null).
+ * tier: "hoofdsponsor" | "partner" | "sponsor"
+ */
+export type Sponsor = {
+  name: string;
+  tier: "hoofdsponsor" | "partner" | "sponsor";
+  logo: string | null;
+  url: string | null;
+};
+
+export const sponsors: Sponsor[] = [
+  // { name: "Voorbeeld B.V.", tier: "hoofdsponsor", logo: "/sponsors/voorbeeld.png", url: "https://voorbeeld.nl" },
+];
+
+export const sponsorPackages = [
+  { name: "Baansponsor", price: "€250", text: "Jouw naam en logo bij een van de banen en op deze website." },
+  { name: "Event partner", price: "€750", text: "Zichtbaar tijdens het hele toernooi, op de website en in onze communicatie." },
+  { name: "Hoofdsponsor", price: "€1.000", text: "De grootste zichtbaarheid: overal als hoofdsponsor vermeld, inclusief kaarten voor het event." },
+] as const;
+
 /** Gegevens voor de privacyverklaring en deelnamevoorwaarden. */
 export const legal = {
   organiserName: "[Naam organisatie / projectgroep]",
   organiserAddress: "[Adres]",
   kvk: "[KvK-nummer, indien van toepassing]",
-  privacyEmail: "[privacy@jouwdomein.nl]",
+  privacyEmail: "hulphond.studenthsleiden@outlook.com",
   retentionPeriod: "[bijv. 3 maanden na afloop van het evenement]",
   lastUpdated: "[datum]",
 } as const;

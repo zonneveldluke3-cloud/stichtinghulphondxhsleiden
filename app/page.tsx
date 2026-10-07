@@ -8,6 +8,8 @@ import { AboutUs } from "@/components/sections/AboutUs";
 import { PracticalInfo } from "@/components/sections/PracticalInfo";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
+import { Donate } from "@/components/sections/Donate";
+import { SponsorStrip } from "@/components/sections/SponsorStrip";
 
 export default function Home() {
   return (
@@ -18,8 +20,10 @@ export default function Home() {
         <About />
         <HowItWorks />
         <Registration />
+        <Donate />
         <AboutUs />
         <PracticalInfo />
+        <SponsorStrip />
         <Faq />
         <Contact />
       </main>

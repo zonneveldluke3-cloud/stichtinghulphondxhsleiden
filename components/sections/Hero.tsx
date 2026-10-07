@@ -69,6 +69,12 @@ export function Hero() {
               {formatEuroShort(PRICE_PER_TEAM_CENTS)} <span className="text-base font-semibold text-white/60">per team</span>
             </p>
           </div>
+          <p className="animate-pop mt-6 text-white/70" style={{ animationDelay: "260ms" }}>
+            Niet meespelen, wel steunen?{" "}
+            <a href="#doneren" className="font-semibold text-white underline underline-offset-4 hover:text-ball">
+              Doneer aan {event.goodCause}
+            </a>
+          </p>
         </div>
       </Container>
     </section>

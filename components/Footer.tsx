@@ -15,6 +15,8 @@ export function Footer() {
         <nav aria-label="Footer" className="flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium">
           <Link href="/privacy" className="hover:text-ball">Privacyverklaring</Link>
           <Link href="/voorwaarden" className="hover:text-ball">Deelnamevoorwaarden</Link>
+          <Link href="/sponsors" className="hover:text-ball">Sponsors</Link>
+          <Link href="/#doneren" className="hover:text-ball">Doneren</Link>
           <Link href="/#contact" className="hover:text-ball">Contact</Link>
         </nav>
       </Container>

@@ -7,6 +7,8 @@ const nav = [
   { href: "/#hoe-werkt-het", label: "Hoe werkt het" },
   { href: "/#info", label: "Info" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/sponsors", label: "Sponsors" },
+  { href: "/#doneren", label: "Doneren" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -21,7 +23,7 @@ export function Header() {
           <span className="truncate">{event.shortName}</span>
         </Link>
 
-        <nav aria-label="Hoofdmenu" className="hidden items-center gap-7 text-[15px] font-medium text-ink/70 md:flex">
+        <nav aria-label="Hoofdmenu" className="hidden items-center gap-7 text-[15px] font-medium text-ink/70 lg:flex">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="transition-colors hover:text-ink">
               {item.label}
