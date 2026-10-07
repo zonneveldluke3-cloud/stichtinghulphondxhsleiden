@@ -3,17 +3,11 @@ import localFont from "next/font/local";
 import { event } from "@/config/event";
 import "./globals.css";
 
-// Fonts worden lokaal meegeleverd (geen verzoeken naar Google = sneller én privacyvriendelijker).
-const inter = localFont({
-  src: "./fonts/Inter-Variable.woff2",
-  variable: "--font-inter",
-  weight: "100 900",
-  display: "swap",
-});
-const display = localFont({
-  src: "./fonts/BricolageGrotesque-Variable.woff2",
-  variable: "--font-bricolage",
-  weight: "200 800",
+// Lettertype zoals op de flyer (Open Sans), lokaal meegeleverd: sneller en privacyvriendelijker.
+const openSans = localFont({
+  src: "./fonts/OpenSans-Variable.woff2",
+  variable: "--font-open-sans",
+  weight: "300 800",
   display: "swap",
 });
 
@@ -38,12 +32,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0c1a2b",
+  themeColor: "#4b96d2",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="nl" className={`${inter.variable} ${display.variable} h-full antialiased`}>
+    <html lang="nl" className={`${openSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">{children}</body>
     </html>
   );

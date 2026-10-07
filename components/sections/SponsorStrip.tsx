@@ -16,7 +16,7 @@ export function SponsorStrip() {
             <SectionTitle>Mogelijk gemaakt door</SectionTitle>
           </div>
           <Link href="/sponsors" className="inline-flex items-center gap-2 font-bold text-court hover:text-ink">
-            Alle sponsors &amp; sponsor worden <ArrowRightIcon className="h-4 w-4" />
+            Bekijk alle sponsors <ArrowRightIcon className="h-4 w-4" />
           </Link>
         </Reveal>
 
@@ -30,10 +30,7 @@ export function SponsorStrip() {
           </ul>
         ) : (
           <Reveal className="mt-10 rounded-3xl border-2 border-dashed border-ink/15 p-8 text-center text-ink/55">
-            Sponsors worden binnenkort bekendgemaakt.{" "}
-            <Link href="/sponsors" className="font-semibold text-court underline underline-offset-2">
-              Wil jouw bedrijf sponsor worden?
-            </Link>
+            Sponsors worden binnenkort bekendgemaakt.
           </Reveal>
         )}
       </Container>

@@ -2,16 +2,19 @@
 
 /* ─── Kleuren & fonts — pas hier de huisstijl aan ─────────────── */
 @theme {
-  --color-ink: #0c1a2b;      /* donkerblauw: tekst & donkere vlakken */
-  --color-court: #2457f5;    /* padelbaan-blauw: accenten */
-  --color-ball: #d7f24b;     /* padelbal-geel: CTA's */
-  --color-paper: #fbfaf6;    /* warme achtergrond */
-  --color-sand: #f1eee4;     /* zachte vlakken */
+  /* Huisstijl van de flyer "Smash voor Hulphond" */
+  --color-ink: #29235d;      /* donker navy: koppen, tekst, donkere vlakken */
+  --color-court: #3d88c9;    /* Hulphond-blauw (iets donkerder voor leesbare tekst) */
+  --color-sky: #4b96d2;      /* Hulphond-blauw: grote vlakken (hero) */
+  --color-sky-deep: #478fc8; /* cirkel in de hero */
+  --color-ball: #d9f23a;     /* limoen / padelbal: accenten en knoppen */
+  --color-paper: #ffffff;    /* achtergrond */
+  --color-sand: #e6f2fc;     /* lichtblauwe kaarten */
   --color-danger: #c62828;
   --color-success: #13804b;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-bricolage), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

@@ -8,26 +8,30 @@
  */
 
 export const event = {
-  name: "Padeltoernooi voor Hulphond",
-  shortName: "Padel voor Hulphond",
+  name: "Smash voor Hulphond",
+  shortName: "Smash voor Hulphond",
+  /** Het label in het gele balkje bovenaan */
+  label: "Bedrijven-padeltoernooi · Laren",
   tagline:
-    "Een middag vol padel, fanatieke potjes en een gezellige borrel — en alles voor het goede doel.",
+    "Sport, netwerken en een goed doel. Speel mee met je bedrijf en sluit af met een borrel en veiling.",
   date: "Vrijdag 30 oktober 2026",
   dateShort: "30 okt 2026",
   location: "Padel Club Laren",
   address: "Schuilkerkpad 2, 1251 SC Laren",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Padel+Club+Laren+Schuilkerkpad+2+1251+SC+Laren",
-  startTime: "[Aanvangstijd, bijv. 16:00]",
+  startTime: "Namiddag & avond",
+  /** Maximaal aantal spelers (op de flyer: 48) */
+  maxPlayers: 48,
   playersPerTeam: "2 spelers",
   registrationDeadline: "[Inschrijfdeadline, bijv. 23 oktober 2026]",
   goodCause: "Stichting Hulphond",
 } as const;
 
 export const about = {
-  title: "Padel met een missie",
+  title: "Sport, netwerken en een goed doel",
   paragraphs: [
-    "[Voorbeeldtekst] Op 30 oktober verandert Padel Club Laren in hét speelveld voor ondernemers, collega's en vrienden uit de regio. In korte, snelle wedstrijden strijden teams van twee om de eer — en om een mooi bedrag voor Stichting Hulphond.",
-    "[Voorbeeldtekst] Je speelt in poules, waardoor iedereen meerdere wedstrijden speelt. Geen ervaring? Geen probleem: plezier staat voorop. Na het toernooi sluiten we af met een borrel, de prijsuitreiking en een veiling.",
+    "Op vrijdag 30 oktober verandert Padel Club Laren in hét speelveld voor bedrijven uit de regio. Teams van twee strijden om de eer — en om een mooi bedrag voor Stichting Hulphond.",
+    "Je speelt in poules van vier teams: iedereen speelt tegen iedereen, in korte wedstrijden van 15 minuten. Niemand ligt er dus na één potje uit. Na afloop sluiten we af met een borrel, de prijsuitreiking en een veiling met leuke prijzen.",
   ],
   highlights: [
     { title: "Poulefase", text: "Iedereen speelt meerdere wedstrijden — niemand ligt er na één potje uit." },
@@ -38,14 +42,19 @@ export const about = {
 
 export const organisation = {
   title: "Wie zijn wij?",
-  /** Vervang door een echte foto: zet bijv. /public/organisatie.jpg neer en vul het pad hieronder in. */
-  photo: null as null | { src: string; alt: string },
-  whoWeAre:
-    "[Voorbeeldtekst] Wij zijn een team van vijf eerstejaars studenten Commerciële Economie aan Hogeschool Leiden. Samen met Stichting Hulphond organiseren we dit toernooi.",
-  why:
-    "[Voorbeeldtekst] Hulphonden maken een enorm verschil in het leven van mensen met een beperking. De opleiding van één hulphond kost veel tijd en geld — daar willen we aan bijdragen.",
-  goal:
-    "[Voorbeeldtekst] Ons doel is om een zo hoog mogelijk bedrag op te halen voor Stichting Hulphond én om ondernemers uit de regio op een sportieve manier met elkaar te verbinden.",
+  /**
+   * Logo van Hogeschool Leiden. Zet het bestand in /public/logos/ (bijv. hsleiden.png)
+   * en vul hieronder de afmetingen in pixels in. Zolang dit null is, staat er een tijdelijk blok.
+   */
+  schoolLogo: null as null | { src: string; alt: string; width: number; height: number },
+  /** Ons verhaal zoals op de flyer. { bold: "..." } wordt dikgedrukt. */
+  story: [
+    "Wij zijn vijf eerstejaarsstudenten ",
+    { bold: "Commerciële Economie aan de Hogeschool Leiden" },
+    " en organiseren dit toernooi samen met ",
+    { bold: "Stichting Hulphond" },
+    ". De opbrengst gaat naar de stichting, die hulphonden opleidt voor mensen met een beperking.",
+  ] as (string | { bold: string })[],
 } as const;
 
 export const contact = {
@@ -80,14 +89,10 @@ export type Sponsor = {
 };
 
 export const sponsors: Sponsor[] = [
+  { name: "Printpunt Huizen", tier: "sponsor", logo: "/sponsors/printpunt-huizen.png", url: "https://www.printpunthuizen.nl" },
   // { name: "Voorbeeld B.V.", tier: "hoofdsponsor", logo: "/sponsors/voorbeeld.png", url: "https://voorbeeld.nl" },
 ];
 
-export const sponsorPackages = [
-  { name: "Baansponsor", price: "€250", text: "Jouw naam en logo bij een van de banen en op deze website." },
-  { name: "Event partner", price: "€750", text: "Zichtbaar tijdens het hele toernooi, op de website en in onze communicatie." },
-  { name: "Hoofdsponsor", price: "€1.000", text: "De grootste zichtbaarheid: overal als hoofdsponsor vermeld, inclusief kaarten voor het event." },
-] as const;
 
 /** Gegevens voor de privacyverklaring en deelnamevoorwaarden. */
 export const legal = {

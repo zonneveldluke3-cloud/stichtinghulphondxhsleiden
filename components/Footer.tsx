@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Section";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-white/70">
+    <footer className="border-t border-white/10 bg-ink text-white/70">
       <Container className="flex flex-col gap-8 py-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-display text-xl font-extrabold text-white">{event.shortName}</p>
