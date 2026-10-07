@@ -8,9 +8,9 @@ export function About() {
     {
       n: String(MAX_TEAMS),
       unit: "teams",
-      text: `Elk bedrijf kan tot ${MAX_TEAMS === 3 ? "drie" : MAX_TEAMS} teams van twee spelers inschrijven.`,
+      text: `Je kunt tot ${MAX_TEAMS === 3 ? "drie" : MAX_TEAMS} teams tegelijk inschrijven, handig als je met een groep komt.`,
     },
-    { n: "2", unit: "per team", text: "Geen collega's nodig: neem ook klanten, partners of vrienden mee." },
+    { n: "2", unit: "per team", text: "Speel samen met een vriend, collega, partner of familielid." },
     { n: String(event.maxPlayers), unit: "spelers", text: "Beperkt aantal plekken, dus vol is vol. Schrijf je op tijd in." },
   ];
 
@@ -29,7 +29,7 @@ export function About() {
 
         <Reveal className="mt-16">
           <h3 className="font-display text-3xl font-extrabold text-ink sm:text-4xl">
-            Zo doe je mee <span className="text-sky">met je bedrijf</span>
+            Zo doe je <span className="text-sky">mee</span>
           </h3>
         </Reveal>
         <ul className="mt-8 grid gap-8 md:grid-cols-3">

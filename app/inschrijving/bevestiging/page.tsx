@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect, unstable_rethrow } from "next/navigation";
 import { contact, event } from "@/config/event";
 import { ButtonLink, StatusShell } from "@/components/StatusShell";
+import { ShareButton } from "@/components/ShareButton";
 import { AlertIcon, ArrowRightIcon, CheckIcon, ClockIcon } from "@/components/ui/icons";
 import { getPaymentUrl } from "@/lib/env";
 import { formatEuro } from "@/lib/format";
@@ -93,7 +94,7 @@ export default async function ConfirmationPage(props: PageProps<"/inschrijving/b
         <div className="mt-4 rounded-xl bg-white/10 px-4 py-3 text-sm">
           Zet in de omschrijving van je betaling:
           <span className="mt-1 block font-mono text-lg font-bold tracking-wider text-white">
-            {reference} – {teamNames[0] ?? registration.contact_name}
+            {reference} {teamNames[0] ?? registration.contact_name}
           </span>
         </div>
       </div>
@@ -121,9 +122,16 @@ export default async function ConfirmationPage(props: PageProps<"/inschrijving/b
         <ClockIcon className="mt-0.5 h-5 w-5 shrink-0 text-court" />
         <p>
           <strong className="text-ink">Let op:</strong> je inschrijving is pas definitief zodra wij je betaling hebben
-          ontvangen. We controleren betalingen handmatig; dat kan een paar dagen duren. Vragen? Mail{" "}
+          ontvangen. We controleren de betalingen zelf, dat kan een paar dagen duren. Vragen? Mail{" "}
           {contact.email}.
         </p>
+      </div>
+
+      <div className="mt-8">
+        <p className="font-semibold text-ink">Ken je nog meer mensen die willen meedoen?</p>
+        <div className="mt-3 flex justify-center">
+          <ShareButton variant="dark" />
+        </div>
       </div>
     </StatusShell>
   );

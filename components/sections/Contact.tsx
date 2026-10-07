@@ -2,10 +2,11 @@ import { contact } from "@/config/event";
 import { Container } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { MailIcon, PhoneIcon, SocialIcon } from "@/components/ui/icons";
+import { ShareButton } from "@/components/ShareButton";
 
 /** Contactblok in de stijl van de onderkant van de flyer. */
 export function Contact() {
-  const socials = contact.socials.filter((s) => s.href && s.href !== "#");
+  const socials = contact.socials.filter((s) => (s.href as string) !== "#");
   return (
     <section id="contact" className="bg-ink py-16 text-white sm:py-20">
       <Container>
@@ -28,8 +29,11 @@ export function Contact() {
                 </a>
               </li>
             </ul>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <ShareButton variant="light" />
+            </div>
             {socials.length > 0 && (
-              <ul className="mt-8 flex flex-wrap gap-3">
+              <ul className="mt-4 flex flex-wrap gap-3">
                 {socials.map((s) => (
                   <li key={s.name}>
                     <a
@@ -39,7 +43,7 @@ export function Contact() {
                       className="inline-flex items-center gap-2.5 rounded-full bg-white/10 px-5 py-3 font-semibold ring-1 ring-white/20 transition hover:bg-white/20"
                     >
                       <SocialIcon name={s.name} className="h-5 w-5" />
-                      {s.name}
+                      {s.name} <span className="font-normal text-white/70">{s.handle}</span>
                     </a>
                   </li>
                 ))}

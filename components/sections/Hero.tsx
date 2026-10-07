@@ -5,6 +5,7 @@ import { formatEuroShort } from "@/lib/format";
 import { Container } from "@/components/ui/Section";
 import { PadelBall } from "@/components/ui/PadelBall";
 import { ArrowRightIcon } from "@/components/ui/icons";
+import { ShareButton } from "@/components/ShareButton";
 
 /** Bovenkant van de pagina, in de stijl van de flyer. */
 export function Hero() {
@@ -62,6 +63,9 @@ export function Hero() {
                 Doneer aan {event.goodCause}
               </a>
             </p>
+            <div className="animate-pop mt-6" style={{ animationDelay: "260ms" }}>
+              <ShareButton variant="outline" />
+            </div>
           </div>
 
           <div className="hidden justify-center lg:flex">

@@ -13,7 +13,7 @@ export const PRICE_PER_TEAM_CENTS = 6000;
 export const CURRENCY = "EUR";
 
 export const MIN_TEAMS = 1;
-/** Maximum aantal teams per inschrijving (bijv. max 3 per bedrijf). */
+/** Maximum aantal teams per inschrijving (bijv. max 3). */
 export const MAX_TEAMS = 3;
 
 export type FieldType = "text" | "email" | "tel";

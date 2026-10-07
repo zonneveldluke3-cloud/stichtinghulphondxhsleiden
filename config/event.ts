@@ -1,6 +1,6 @@
 /**
  * ─────────────────────────────────────────────────────────────
- *  EVENEMENTGEGEVENS — pas hier alle teksten en details aan.
+ *  EVENEMENTGEGEVENS: pas hier alle teksten en details aan.
  * ─────────────────────────────────────────────────────────────
  * Alles tussen [vierkante haken] is een placeholder die je nog
  * moet invullen. Je hoeft voor tekstwijzigingen géén componenten
@@ -11,9 +11,9 @@ export const event = {
   name: "Smash voor Hulphond",
   shortName: "Smash voor Hulphond",
   /** Het label in het gele balkje bovenaan */
-  label: "Bedrijven-padeltoernooi · Laren",
+  label: "Padeltoernooi · Laren",
   tagline:
-    "Sport, netwerken en een goed doel. Speel mee met je bedrijf en sluit af met een borrel en veiling.",
+    "Sport, gezelligheid en een goed doel. Speel mee met een vriend, collega of familielid en sluit af met een borrel en veiling.",
   date: "Vrijdag 30 oktober 2026",
   dateShort: "30 okt 2026",
   location: "Padel Club Laren",
@@ -25,16 +25,18 @@ export const event = {
   playersPerTeam: "2 spelers",
   registrationDeadline: "[Inschrijfdeadline, bijv. 23 oktober 2026]",
   goodCause: "Stichting Hulphond",
+  /** Adres van de website (wordt gebruikt bij delen) */
+  siteUrl: "https://stichtinghulphondxhsleiden.vercel.app",
 } as const;
 
 export const about = {
-  title: "Sport, netwerken en een goed doel",
+  title: "Sport, gezelligheid en een goed doel",
   paragraphs: [
-    "Op vrijdag 30 oktober verandert Padel Club Laren in hét speelveld voor bedrijven uit de regio. Teams van twee strijden om de eer — en om een mooi bedrag voor Stichting Hulphond.",
+    "Op vrijdag 30 oktober is Padel Club Laren het speelveld voor iedereen in de regio die van sport houdt. Doe mee met een vriend, je partner, een collega of je buurman. Ervaren of net begonnen, iedereen is welkom. Teams van twee spelen om de eer en om een mooi bedrag voor Stichting Hulphond.",
     "Je speelt in poules van vier teams: iedereen speelt tegen iedereen, in korte wedstrijden van 15 minuten. Niemand ligt er dus na één potje uit. Na afloop sluiten we af met een borrel, de prijsuitreiking en een veiling met leuke prijzen.",
   ],
   highlights: [
-    { title: "Poulefase", text: "Iedereen speelt meerdere wedstrijden — niemand ligt er na één potje uit." },
+    { title: "Poulefase", text: "Iedereen speelt meerdere wedstrijden. Niemand ligt er na één potje uit." },
     { title: "Borrel & prijzen", text: "Afsluiten met een drankje, prijsuitreiking en veiling." },
     { title: "100% goed doel", text: "De volledige opbrengst gaat naar Stichting Hulphond." },
   ],
@@ -47,7 +49,7 @@ export const organisation = {
    * en vul hieronder de afmetingen in pixels in. Zolang dit null is, staat er een tijdelijk blok.
    */
   schoolLogo: null as null | { src: string; alt: string; width: number; height: number },
-  /** Ons verhaal zoals op de flyer. { bold: "..." } wordt dikgedrukt. */
+  /** Korte intro zoals op de flyer. { bold: "..." } wordt dikgedrukt. */
   story: [
     "Wij zijn vijf eerstejaarsstudenten ",
     { bold: "Commerciële Economie aan de Hogeschool Leiden" },
@@ -55,6 +57,21 @@ export const organisation = {
     { bold: "Stichting Hulphond" },
     ". De opbrengst gaat naar de stichting, die hulphonden opleidt voor mensen met een beperking.",
   ] as (string | { bold: string })[],
+  /** De blokken onder de intro. */
+  blocks: [
+    {
+      title: "Ons salesproject",
+      text: "Voor school zetten we een paar weken lang ons eigen kleine bedrijf op. We beginnen zonder startkapitaal en proberen in korte tijd zoveel mogelijk geld op te halen voor een goed doel. Dit padeltoernooi is daar een belangrijk onderdeel van.",
+    },
+    {
+      title: "Waarom Stichting Hulphond?",
+      text: "Een hulphond maakt een enorm verschil voor iemand met een beperking. Zo'n hond helpt bij dagelijkse dingen en geeft een stuk zelfstandigheid terug. Het opleiden van een hulphond kost veel tijd en geld. Daar willen wij aan bijdragen.",
+    },
+    {
+      title: "Ons doel",
+      text: "We willen minimaal €3.000 ophalen voor Stichting Hulphond. Alles wat dit toernooi oplevert gaat naar de stichting. Ook met een donatie of door de website te delen help je ons al een stuk verder.",
+    },
+  ],
 } as const;
 
 export const contact = {
@@ -62,9 +79,7 @@ export const contact = {
   phone: "06 30131167",
   phoneHref: "tel:+31630131167",
   socials: [
-    { name: "Instagram", href: "#", handle: "[@jouwaccount]" },
-    { name: "LinkedIn", href: "#", handle: "[Jouw pagina]" },
-    { name: "TikTok", href: "#", handle: "[@jouwaccount]" },
+    { name: "Instagram", href: "https://www.instagram.com/krachtop4poten", handle: "@krachtop4poten" },
   ],
 } as const;
 
@@ -89,6 +104,7 @@ export type Sponsor = {
 };
 
 export const sponsors: Sponsor[] = [
+  { name: "Padel Club Laren", tier: "partner", logo: null, url: "https://padelclublaren.nl" },
   { name: "Printpunt Huizen", tier: "sponsor", logo: "/sponsors/printpunt-huizen.png", url: "https://www.printpunthuizen.nl" },
   // { name: "Voorbeeld B.V.", tier: "hoofdsponsor", logo: "/sponsors/voorbeeld.png", url: "https://voorbeeld.nl" },
 ];
@@ -111,11 +127,11 @@ export const faq = [
   },
   {
     q: "Hoeveel spelers mogen in een team?",
-    a: "Een team bestaat uit 2 spelers. Je hoeft geen collega's te zijn: vrienden, familie of zakenpartners mag ook.",
+    a: "Een team bestaat uit 2 spelers. Met wie je speelt kies je zelf: een vriend, familielid, partner of collega.",
   },
   {
     q: "Kan ik meerdere teams inschrijven?",
-    a: "Ja! Kies in het inschrijfformulier het aantal teams. Voor elk team vul je een teamnaam en een contactpersoon in. Je betaalt alles in één keer.",
+    a: "Ja. Kies in het inschrijfformulier het aantal teams (maximaal drie per inschrijving). Voor elk team vul je een teamnaam en een contactpersoon in. Je betaalt alles in één keer.",
   },
   {
     q: "Hoe werkt de betaling?",
