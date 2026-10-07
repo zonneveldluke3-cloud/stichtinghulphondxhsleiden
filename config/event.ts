@@ -144,6 +144,10 @@ export const faq = [
     a: "Je kiest per team een niveau: Beginner, Gemiddeld of Gevorderd. Wij maken de poules per niveau, zodat je tegen teams van ongeveer hetzelfde niveau speelt. Elk niveau heeft een eigen winnaar.",
   },
   {
+    q: "Is er eten en drinken?",
+    a: "We zijn nog hard bezig om via sponsors een borrel en eten te regelen. Zodra dat rond is, laten we het hier en per e-mail weten. Heb je een bedrijf dat hierbij kan helpen? Mail ons, dat zou super zijn.",
+  },
+  {
     q: "Kan ik meerdere teams inschrijven?",
     a: "Ja. Kies in het inschrijfformulier het aantal teams (maximaal drie per inschrijving). Voor elk team vul je een teamnaam en een contactpersoon in. Je betaalt alles in één keer.",
   },

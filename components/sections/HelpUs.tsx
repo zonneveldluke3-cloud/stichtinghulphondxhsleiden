@@ -26,8 +26,8 @@ const ways = [
   },
   {
     icon: HeartIcon,
-    title: "Spullen of hulp",
-    text: "Denk aan drinken of hapjes voor de borrel, ballen, prijzen, een fotograaf of hulp op de dag zelf. Alles helpt.",
+    title: "Borrel, eten of hulp",
+    text: "We doen ons best om via sponsors een borrel en eten te regelen, maar dat is nog niet rond. Kun jij drinken of hapjes regelen, of helpen op de dag zelf? Mail ons!",
     subject: `Ik wil helpen bij ${event.name}`,
     body: "Hoi,\n\nIk wil graag helpen met:\n\n[waarmee wil je helpen?]\n\nMijn naam:\nTelefoonnummer:\n\nGroet,",
     button: "Mail ons wat je wilt doen",
