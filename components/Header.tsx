@@ -9,7 +9,7 @@ const nav = [
   { href: "/#info", label: "Info" },
   { href: "/#faq", label: "FAQ" },
   { href: "/sponsors", label: "Sponsors" },
-  { href: "/#doneren", label: "Doneren" },
+  { href: "/#doneren", label: "Help ons" },
   { href: "/#contact", label: "Contact" },
 ];
 

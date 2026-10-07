@@ -5,7 +5,7 @@ import { PlusIcon } from "@/components/ui/icons";
 
 export function Faq() {
   return (
-    <section id="faq" className="py-20 sm:py-28">
+    <section id="faq" className="bg-sand py-20 sm:py-28">
       <Container className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <Reveal>
           <Eyebrow>Veelgestelde vragen</Eyebrow>

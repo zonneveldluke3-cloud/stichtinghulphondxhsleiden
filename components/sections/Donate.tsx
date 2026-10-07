@@ -5,7 +5,7 @@ import { ExternalIcon, HeartIcon } from "@/components/ui/icons";
 
 export function Donate() {
   return (
-    <section id="doneren" className="py-10 sm:py-14">
+    <section id="doneren" className="py-14 sm:py-20">
       <Container>
         <Reveal className="relative overflow-hidden rounded-[2rem] bg-ball p-8 text-ink sm:p-14">
           <HeartIcon

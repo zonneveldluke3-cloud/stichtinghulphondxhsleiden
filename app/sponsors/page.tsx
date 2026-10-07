@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { event, sponsors, type Sponsor } from "@/config/event";
+import { contact, event, sponsors, type Sponsor } from "@/config/event";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SponsorLogo } from "@/components/SponsorLogo";
 import { Container, Eyebrow } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { MailIcon } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
   title: "Sponsors",
@@ -67,6 +68,26 @@ export default function SponsorsPage() {
           </Container>
         </section>
 
+        <section className="bg-sand py-14 sm:py-20">
+          <Container>
+            <Reveal className="flex flex-col items-start gap-6 rounded-[2rem] bg-ink p-8 text-white sm:p-12 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <h2 className="font-display text-3xl font-extrabold sm:text-4xl">
+                  Ook <span className="text-ball">sponsoren?</span>
+                </h2>
+                <p className="mt-2 max-w-xl text-lg text-white/80">
+                  Met geld, een prijs voor de veiling of iets anders. Stuur ons een mailtje, dan denken we graag met je mee.
+                </p>
+              </div>
+              <a
+                href={`mailto:${contact.email}?subject=${encodeURIComponent(`Sponsoren van ${event.name}`)}`}
+                className="inline-flex shrink-0 items-center gap-3 rounded-full bg-ball px-7 py-4 text-lg font-extrabold text-ink transition hover:bg-white"
+              >
+                <MailIcon className="h-5 w-5" /> Mail ons
+              </a>
+            </Reveal>
+          </Container>
+        </section>
       </main>
       <Footer />
     </>

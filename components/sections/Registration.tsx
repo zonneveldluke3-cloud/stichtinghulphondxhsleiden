@@ -4,7 +4,7 @@ import { RegistrationForm } from "@/components/form/RegistrationForm";
 
 export function Registration() {
   return (
-    <section id="inschrijven" className="relative py-20 sm:py-28">
+    <section id="inschrijven" className="relative bg-sand py-20 sm:py-28">
       <Container>
         <div className="mb-12 max-w-2xl">
           <Eyebrow>Inschrijven</Eyebrow>

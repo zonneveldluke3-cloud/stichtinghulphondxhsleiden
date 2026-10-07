@@ -3,12 +3,15 @@ import { contact, organisation } from "@/config/event";
 import { Container, Eyebrow, SectionTitle } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { InstagramIcon } from "@/components/ui/icons";
+import { PawTrail } from "@/components/ui/Decor";
 
 /** Over ons: logo Hogeschool Leiden, ons verhaal en waarom we dit doen. */
 export function AboutUs() {
   const instagram = contact.socials.find((s) => s.name === "Instagram");
   return (
-    <section id="over-ons" className="py-16 sm:py-24">
+    <section id="over-ons" className="relative isolate overflow-hidden py-16 sm:py-24">
+      <PawTrail className="absolute -left-10 top-10 -z-10 w-72 text-sky/15 sm:w-96" />
+      <PawTrail className="absolute -right-8 bottom-10 -z-10 w-64 -scale-x-100 text-sky/15 sm:w-80" />
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <Eyebrow>Over ons</Eyebrow>

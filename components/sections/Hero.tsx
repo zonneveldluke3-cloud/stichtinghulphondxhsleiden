@@ -3,7 +3,7 @@ import { event } from "@/config/event";
 import { PRICE_PER_TEAM_CENTS } from "@/config/registration";
 import { formatEuroShort } from "@/lib/format";
 import { Container } from "@/components/ui/Section";
-import { PadelBall } from "@/components/ui/PadelBall";
+import { HeroScene } from "@/components/ui/HeroScene";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import { ShareButton } from "@/components/ShareButton";
 
@@ -18,13 +18,13 @@ export function Hero() {
         aria-hidden
       />
 
-      <Container className="pb-32 pt-10 sm:pb-40 sm:pt-14">
+      <Container className="relative z-10 pb-24 pt-10 sm:pb-32 sm:pt-14">
         {/* Logo Hulphond */}
         <div className="animate-pop inline-flex rounded-full bg-white px-3 py-2 shadow-sm">
           <Image src="/logos/hulphond.png" alt="Stichting Hulphond" width={646} height={148} priority className="h-9 w-auto sm:h-11" />
         </div>
 
-        <div className="mt-8 grid items-center gap-10 lg:grid-cols-[1.5fr_1fr]">
+        <div className="mt-8">
           <div>
             <p className="animate-pop inline-block rounded-full bg-ball px-5 py-2 text-xs font-extrabold uppercase tracking-[0.18em] text-ink sm:text-sm">
               {event.label}
@@ -40,7 +40,7 @@ export function Hero() {
               )}
             </h1>
 
-            <p className="animate-pop mt-6 max-w-xl text-lg leading-relaxed text-white/95 sm:text-2xl sm:leading-snug" style={{ animationDelay: "80ms" }}>
+            <p className="animate-pop mt-6 max-w-xl text-lg lg:max-w-lg leading-relaxed text-white/95 sm:text-2xl sm:leading-snug" style={{ animationDelay: "80ms" }}>
               {event.tagline}
             </p>
 
@@ -68,11 +68,14 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="hidden justify-center lg:flex">
-            <PadelBall className="animate-float h-64 w-64 drop-shadow-[0_20px_30px_rgba(41,35,93,0.25)] xl:h-72 xl:w-72" />
-          </div>
+
         </div>
       </Container>
+
+      {/* Geanimeerde padelbaan met hulphond */}
+      <div className="relative -mt-12 pb-16 sm:-mt-10 sm:pb-24 lg:absolute lg:pb-0 lg:bottom-20 lg:right-0 lg:mt-0 lg:w-[54%] xl:w-[56%]">
+        <HeroScene className="h-auto w-full" />
+      </div>
 
       {/* Golvende overgang naar wit, zoals op de flyer */}
       <svg

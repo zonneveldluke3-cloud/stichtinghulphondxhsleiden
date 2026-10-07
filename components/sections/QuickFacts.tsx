@@ -11,7 +11,7 @@ export function QuickFacts() {
     { icon: TrophyIcon, label: "Na afloop", title: "Borrel & veiling", sub: "Met prijsuitreiking per niveau" },
   ];
   return (
-    <section className="relative z-10 -mt-20 pb-6 sm:-mt-24">
+    <section className="relative z-10 -mt-6 pb-6 sm:-mt-16 lg:-mt-24">
       <Container>
         <ul className="grid gap-4 md:grid-cols-3">
           {facts.map(({ icon: Icon, label, title, sub }, i) => (

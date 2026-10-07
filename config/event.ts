@@ -16,6 +16,8 @@ export const event = {
     "Sport, gezelligheid en een goed doel. Speel mee met een vriend, collega of familielid en sluit af met een borrel en veiling.",
   date: "Vrijdag 30 oktober 2026",
   dateShort: "30 okt 2026",
+  /** Start van het toernooi, voor het aftellen (Nederlandse wintertijd = +01:00) */
+  startsAt: "2026-10-30T17:00:00+01:00",
   location: "Padel Club Laren",
   address: "Schuilkerkpad 2, 1251 SC Laren",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Padel+Club+Laren+Schuilkerkpad+2+1251+SC+Laren",

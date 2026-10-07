@@ -2,6 +2,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { QuickFacts } from "@/components/sections/QuickFacts";
+import { Ticker } from "@/components/sections/Ticker";
+import { Countdown } from "@/components/sections/Countdown";
 import { About } from "@/components/sections/About";
 import { Levels } from "@/components/sections/Levels";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -11,6 +13,7 @@ import { PracticalInfo } from "@/components/sections/PracticalInfo";
 import { Faq } from "@/components/sections/Faq";
 import { Contact } from "@/components/sections/Contact";
 import { Donate } from "@/components/sections/Donate";
+import { HelpUs } from "@/components/sections/HelpUs";
 import { SponsorStrip } from "@/components/sections/SponsorStrip";
 
 export default function Home() {
@@ -20,11 +23,14 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <QuickFacts />
+        <Ticker />
         <About />
         <Levels />
         <HowItWorks />
         <Registration />
         <Donate />
+        <HelpUs />
+        <Countdown />
         <AboutUs />
         <PracticalInfo />
         <SponsorStrip />
