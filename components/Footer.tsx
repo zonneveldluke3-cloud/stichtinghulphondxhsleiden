@@ -16,7 +16,7 @@ export function Footer() {
           <Link href="/privacy" className="hover:text-ball">Privacyverklaring</Link>
           <Link href="/voorwaarden" className="hover:text-ball">Deelnamevoorwaarden</Link>
           <Link href="/sponsors" className="hover:text-ball">Sponsors</Link>
-          <Link href="/#doneren" className="hover:text-ball">Doneren</Link>
+          <Link href="/#doneren" className="hover:text-ball">Help ons</Link>
           <Link href="/#contact" className="hover:text-ball">Contact</Link>
         </nav>
       </Container>

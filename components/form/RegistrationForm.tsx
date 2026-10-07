@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   GENERAL_FIELDS,
   MAX_TEAMS,
+  TOTAL_TEAM_CAPACITY,
   MIN_TEAMS,
   PRICE_PER_TEAM_CENTS,
   TEAM_FIELDS,
@@ -56,6 +57,27 @@ export function RegistrationForm() {
     return () => window.removeEventListener("pageshow", onShow);
   }, []);
 
+  // Vrije plekken ophalen (vol of gesloten → formulier dicht)
+  const [spots, setSpots] = useState<{ open: boolean; reason: "full" | "closed" | null; remaining: number | null } | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/plekken", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((data) => {
+        if (cancelled) return;
+        setSpots(data);
+        if (typeof data.remaining === "number" && data.remaining > 0) {
+          setTeamCount((c) => Math.min(c, data.remaining));
+        }
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  const maxTeams =
+    spots && typeof spots.remaining === "number" ? Math.max(MIN_TEAMS, Math.min(MAX_TEAMS, spots.remaining)) : MAX_TEAMS;
+
   const total = totalCents(teamCount);
 
   function touched(key: string) {
@@ -71,7 +93,7 @@ export function RegistrationForm() {
   }
 
   function changeCount(delta: number) {
-    const next = Math.min(MAX_TEAMS, Math.max(MIN_TEAMS, teamCount + delta));
+    const next = Math.min(maxTeams, Math.max(MIN_TEAMS, teamCount + delta));
     if (next === teamCount) return;
     touched("teams");
     setTeamCount(next);
@@ -177,6 +199,29 @@ export function RegistrationForm() {
 
   const termsError = errors.acceptTerms;
 
+  if (spots && !spots.open) {
+    return (
+      <div className="rounded-3xl bg-white p-8 text-center shadow-sm ring-1 ring-ink/5 sm:p-12">
+        <p className="font-display text-3xl font-extrabold text-ink">
+          {spots.reason === "closed" ? "De inschrijving is gesloten" : "Het toernooi is vol!"}
+        </p>
+        <p className="mx-auto mt-3 max-w-xl text-lg text-ink/70">
+          {spots.reason === "closed"
+            ? "Het toernooi is al begonnen. Bedankt voor je interesse! Je kunt Stichting Hulphond nog steeds steunen met een donatie."
+            : "Alle plekken zijn bezet. Wil je op de reservelijst? Stuur ons een mail, dan laten we het je weten als er een plek vrijkomt."}
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="#doneren" className="rounded-full bg-ball px-6 py-3 font-bold text-ink hover:bg-ink hover:text-white">
+            Doneren
+          </a>
+          <a href="#contact" className="rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-court">
+            Contact
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-6 lg:grid-cols-[1fr_380px] lg:items-start lg:gap-8">
       <div className="space-y-6">
@@ -203,7 +248,7 @@ export function RegistrationForm() {
               <button
                 type="button"
                 onClick={() => changeCount(1)}
-                disabled={teamCount >= MAX_TEAMS}
+                disabled={teamCount >= maxTeams}
                 aria-label="Eén team meer"
                 className="grid h-14 w-14 place-items-center rounded-2xl bg-ink text-white transition hover:bg-court disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-ink"
               >
@@ -219,6 +264,14 @@ export function RegistrationForm() {
           </div>
           <p className="mt-4 text-sm text-ink/55">
             Minimaal {MIN_TEAMS}, maximaal {MAX_TEAMS} teams per inschrijving.
+            {spots && typeof spots.remaining === "number" && (
+              <>
+                {" "}
+                <strong className="font-bold text-court">
+                  Nog {spots.remaining} van de {TOTAL_TEAM_CAPACITY} plekken vrij.
+                </strong>
+              </>
+            )}
           </p>
           {errors.teams && <p className="mt-2 text-sm font-medium text-danger">{errors.teams}</p>}
         </div>
@@ -277,7 +330,7 @@ export function RegistrationForm() {
               </fieldset>
             ))}
           </div>
-          {teamCount < MAX_TEAMS && (
+          {teamCount < maxTeams && (
             <button
               type="button"
               onClick={() => changeCount(1)}

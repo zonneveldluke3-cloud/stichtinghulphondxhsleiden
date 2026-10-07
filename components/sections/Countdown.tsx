@@ -42,7 +42,7 @@ export function Countdown() {
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         <p className="text-sm font-bold uppercase tracking-[0.18em] text-ball">Aftellen</p>
         <h2 className="mt-3 max-w-2xl font-display text-4xl font-extrabold leading-tight sm:text-5xl">
-          {started ? "Het toernooi is begonnen!" : "Nog even en dan is het zover"}
+          {started ? "Bedankt voor jullie steun!" : "Nog even en dan is het zover"}
         </h2>
 
         {!started && (
@@ -65,12 +65,21 @@ export function Countdown() {
           </ul>
         )}
 
-        <a
-          href="#inschrijven"
-          className="mt-10 inline-flex items-center gap-3 rounded-full bg-ball px-8 py-4 text-lg font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-white"
-        >
-          Zorg dat je erbij bent
-        </a>
+        {started ? (
+          <a
+            href="#doneren"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-ball px-8 py-4 text-lg font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+          >
+            Doneer aan Stichting Hulphond
+          </a>
+        ) : (
+          <a
+            href="#inschrijven"
+            className="mt-10 inline-flex items-center gap-3 rounded-full bg-ball px-8 py-4 text-lg font-extrabold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+          >
+            Zorg dat je erbij bent
+          </a>
+        )}
       </div>
     </section>
   );

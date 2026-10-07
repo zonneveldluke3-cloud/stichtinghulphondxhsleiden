@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { TEAM_CORE_COLUMNS, TEAM_FIELDS, totalCents } from "@/config/registration";
+import { TEAM_CORE_COLUMNS, TEAM_FIELDS, registrationIsClosed, totalCents } from "@/config/registration";
+import { getRemainingSpots } from "@/lib/capacity";
 import { getClientIp, rateLimit } from "@/lib/rate-limit";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { flattenIssues, registrationSchema } from "@/lib/validation";
@@ -70,7 +71,22 @@ export async function POST(request: NextRequest) {
     extra_fields: Object.fromEntries(extraFieldNames.map((n) => [n, t[n] ?? ""])),
   }));
 
+  // ── Inschrijving gesloten of vol? ──────────────────────────────
+  if (registrationIsClosed()) {
+    return jsonError(409, "De inschrijving is gesloten. Het toernooi is al begonnen.");
+  }
+
   try {
+    const remaining = await getRemainingSpots();
+    if (numberOfTeams > remaining) {
+      return jsonError(
+        409,
+        remaining === 0
+          ? "Het toernooi is helaas vol. Mail ons als je op de reservelijst wilt."
+          : `Er ${remaining === 1 ? "is nog maar 1 plek" : `zijn nog maar ${remaining} plekken`} vrij. Kies minder teams.`,
+      );
+    }
+
     const supabase = getSupabaseAdmin();
 
     // ── 4. Inschrijving opslaan met status "pending" ──────────────

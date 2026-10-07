@@ -16,6 +16,16 @@ export const MIN_TEAMS = 1;
 /** Maximum aantal teams per inschrijving (bijv. max 3). */
 export const MAX_TEAMS = 3;
 
+/** Maximaal aantal teams in het hele toernooi (48 spelers = 24 teams). */
+export const TOTAL_TEAM_CAPACITY = 24;
+
+/** Vanaf dit moment kan niemand zich meer inschrijven (start toernooi, Nederlandse tijd). */
+export const REGISTRATION_CLOSES_AT = "2026-10-30T17:00:00+01:00";
+
+export function registrationIsClosed(now: number = Date.now()): boolean {
+  return now >= new Date(REGISTRATION_CLOSES_AT).getTime();
+}
+
 export type FieldType = "text" | "email" | "tel" | "select";
 
 export interface FieldDef {

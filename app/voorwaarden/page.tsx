@@ -23,7 +23,7 @@ export default function TermsPage() {
       <section>
         <h2>2. Kosten en betaling</h2>
         <ul>
-          <li>Deelname kost {formatEuro(PRICE_PER_TEAM_CENTS)} per team, inclusief eventuele btw.</li>
+          <li>Deelname kost {formatEuro(PRICE_PER_TEAM_CENTS)} per team.</li>
           <li>Na het inschrijven betaal je via de betaallink op de bevestigingspagina (bijvoorbeeld een Tikkie).</li>
           <li>Je inschrijving is pas definitief nadat wij je betaling hebben ontvangen en bevestigd.</li>
           <li>De opbrengst komt ten goede aan {event.goodCause}.</li>

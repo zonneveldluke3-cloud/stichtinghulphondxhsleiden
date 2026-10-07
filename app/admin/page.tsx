@@ -100,7 +100,10 @@ export default async function AdminPage(props: PageProps<"/admin">) {
             Beheer <span className="font-semibold text-ink/40">· {event.shortName}</span>
           </p>
           <div className="flex items-center gap-4 text-sm font-semibold">
-            <Link href="/" className="text-ink/60 hover:text-ink">Website</Link>
+            <a href="/admin/export" className="rounded-full bg-ball px-4 py-2 text-ink hover:bg-ink hover:text-white">
+              Download teams (Excel)
+            </a>
+            <Link href="/" className="hidden text-ink/60 hover:text-ink sm:inline">Website</Link>
             <form action={logout}>
               <button type="submit" className="rounded-full bg-sand px-4 py-2 hover:bg-ink hover:text-white">
                 Uitloggen
