@@ -19,11 +19,13 @@ export const event = {
   location: "Padel Club Laren",
   address: "Schuilkerkpad 2, 1251 SC Laren",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Padel+Club+Laren+Schuilkerkpad+2+1251+SC+Laren",
-  startTime: "Namiddag & avond",
+  startTime: "17:00 tot 20:00",
+  /** Wat er na het spelen gebeurt */
+  afterParty: "Daarna borrel en veiling",
   /** Maximaal aantal spelers (op de flyer: 48) */
   maxPlayers: 48,
   playersPerTeam: "2 spelers",
-  registrationDeadline: "[Inschrijfdeadline, bijv. 23 oktober 2026]",
+  registrationDeadline: "30 oktober, de dag van het toernooi",
   goodCause: "Stichting Hulphond",
   /** Adres van de website (wordt gebruikt bij delen) */
   siteUrl: "https://stichtinghulphondxhsleiden.vercel.app",
@@ -33,7 +35,7 @@ export const about = {
   title: "Sport, gezelligheid en een goed doel",
   paragraphs: [
     "Op vrijdag 30 oktober is Padel Club Laren het speelveld voor iedereen in de regio die van sport houdt. Doe mee met een vriend, je partner, een collega of je buurman. Ervaren of net begonnen, iedereen is welkom. Teams van twee spelen om de eer en om een mooi bedrag voor Stichting Hulphond.",
-    "Je speelt in poules van vier teams: iedereen speelt tegen iedereen, in korte wedstrijden van 15 minuten. Niemand ligt er dus na één potje uit. Na afloop sluiten we af met een borrel, de prijsuitreiking en een veiling met leuke prijzen.",
+    "Je speelt in poules van vier teams: iedereen speelt tegen iedereen, in korte wedstrijden van 15 minuten. Niemand ligt er dus na één potje uit. We spelen van 17:00 tot 20:00 en sluiten daarna af met een borrel, de prijsuitreiking en een veiling met leuke prijzen.",
   ],
   highlights: [
     { title: "Poulefase", text: "Iedereen speelt meerdere wedstrijden. Niemand ligt er na één potje uit." },
@@ -48,7 +50,7 @@ export const organisation = {
    * Logo van Hogeschool Leiden. Zet het bestand in /public/logos/ (bijv. hsleiden.png)
    * en vul hieronder de afmetingen in pixels in. Zolang dit null is, staat er een tijdelijk blok.
    */
-  schoolLogo: null as null | { src: string; alt: string; width: number; height: number },
+  schoolLogo: { src: "/logos/hsleiden.png", alt: "Hogeschool Leiden", width: 404, height: 92 } as null | { src: string; alt: string; width: number; height: number },
   /** Korte intro zoals op de flyer. { bold: "..." } wordt dikgedrukt. */
   story: [
     "Wij zijn vijf eerstejaarsstudenten ",
@@ -101,10 +103,12 @@ export type Sponsor = {
   tier: "hoofdsponsor" | "partner" | "sponsor";
   logo: string | null;
   url: string | null;
+  /** true = logo heeft een eigen achtergrond en vult het hele vak */
+  fullBleed?: boolean;
 };
 
 export const sponsors: Sponsor[] = [
-  { name: "Padel Club Laren", tier: "partner", logo: null, url: "https://padelclublaren.nl" },
+  { name: "Padel Club Laren", tier: "partner", logo: "/sponsors/padel-club-laren.png", url: "https://padelclublaren.nl", fullBleed: true },
   { name: "Printpunt Huizen", tier: "sponsor", logo: "/sponsors/printpunt-huizen.png", url: "https://www.printpunthuizen.nl" },
   // { name: "Voorbeeld B.V.", tier: "hoofdsponsor", logo: "/sponsors/voorbeeld.png", url: "https://voorbeeld.nl" },
 ];
@@ -128,6 +132,14 @@ export const faq = [
   {
     q: "Hoeveel spelers mogen in een team?",
     a: "Een team bestaat uit 2 spelers. Met wie je speelt kies je zelf: een vriend, familielid, partner of collega.",
+  },
+  {
+    q: "Ik speel nog niet zo lang padel. Kan ik meedoen?",
+    a: "Zeker. Kies bij het inschrijven het niveau Beginner. Je speelt dan tegen teams die ook net begonnen zijn.",
+  },
+  {
+    q: "Hoe werkt de indeling op niveau?",
+    a: "Je kiest per team een niveau: Beginner, Gemiddeld of Gevorderd. Wij maken de poules per niveau, zodat je tegen teams van ongeveer hetzelfde niveau speelt. Elk niveau heeft een eigen winnaar.",
   },
   {
     q: "Kan ik meerdere teams inschrijven?",

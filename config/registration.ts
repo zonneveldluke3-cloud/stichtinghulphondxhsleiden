@@ -16,7 +16,7 @@ export const MIN_TEAMS = 1;
 /** Maximum aantal teams per inschrijving (bijv. max 3). */
 export const MAX_TEAMS = 3;
 
-export type FieldType = "text" | "email" | "tel";
+export type FieldType = "text" | "email" | "tel" | "select";
 
 export interface FieldDef {
   /** Unieke sleutel. Gebruik snake_case. */
@@ -29,7 +29,28 @@ export interface FieldDef {
   autoComplete?: string;
   /** Neemt de hele breedte in op desktop */
   fullWidth?: boolean;
+  /** Alleen voor type "select": de keuzes */
+  options?: readonly { value: string; label: string }[];
 }
+
+/** Speelniveaus. De poules worden per niveau ingedeeld. */
+export const LEVELS = [
+  {
+    value: "beginner",
+    label: "Beginner",
+    text: "Je speelt net of af en toe een potje. Plezier staat voorop en je hoeft nog niet alle regels te kennen.",
+  },
+  {
+    value: "gemiddeld",
+    label: "Gemiddeld",
+    text: "Je speelt regelmatig, kent de regels en kunt de bal een tijdje in het spel houden.",
+  },
+  {
+    value: "gevorderd",
+    label: "Gevorderd",
+    text: "Je speelt vaak of in competitie, gebruikt de wanden goed en houdt van een pittige wedstrijd.",
+  },
+] as const;
 
 /**
  * Velden die per team worden gevraagd.
@@ -52,6 +73,15 @@ export const TEAM_FIELDS: FieldDef[] = [
     required: true,
     maxLength: 60,
     placeholder: "Bijv. De Smashers",
+    fullWidth: true,
+  },
+  {
+    name: "level",
+    label: "Niveau van het team",
+    type: "select",
+    required: true,
+    maxLength: 20,
+    options: LEVELS.map((l) => ({ value: l.value, label: l.label })),
     fullWidth: true,
   },
   {

@@ -9,10 +9,10 @@ export function PracticalInfo() {
   const items = [
     { icon: CalendarIcon, label: "Datum", value: event.date },
     { icon: PinIcon, label: "Locatie", value: event.location, sub: event.address, href: event.mapsUrl },
-    { icon: ClockIcon, label: "Aanvang", value: event.startTime },
+    { icon: ClockIcon, label: "Tijd", value: event.startTime, sub: event.afterParty },
     { icon: EuroIcon, label: "Prijs", value: `${formatEuroShort(PRICE_PER_TEAM_CENTS)} per team` },
     { icon: UsersIcon, label: "Spelers per team", value: event.playersPerTeam },
-    { icon: FlagIcon, label: "Inschrijfdeadline", value: event.registrationDeadline },
+    { icon: FlagIcon, label: "Inschrijven kan tot", value: event.registrationDeadline, sub: "Zolang er plek is" },
   ];
 
   return (

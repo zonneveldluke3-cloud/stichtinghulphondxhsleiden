@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Section";
 const nav = [
   { href: "/#over", label: "Over" },
   { href: "/#hoe-werkt-het", label: "Hoe werkt het" },
+  { href: "/#niveaus", label: "Niveaus" },
   { href: "/#info", label: "Info" },
   { href: "/#faq", label: "FAQ" },
   { href: "/sponsors", label: "Sponsors" },

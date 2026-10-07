@@ -8,7 +8,7 @@ export function QuickFacts() {
   const facts = [
     { icon: CalendarIcon, label: "Wanneer", title: event.date, sub: event.startTime },
     { icon: PinIcon, label: "Waar", title: event.location, sub: "Banen & borrel" },
-    { icon: TrophyIcon, label: "Afsluiting", title: "Borrel & prijsuitreiking", sub: "+ veiling met leuke prijzen" },
+    { icon: TrophyIcon, label: "Na afloop", title: "Borrel & veiling", sub: "Met prijsuitreiking per niveau" },
   ];
   return (
     <section className="relative z-10 -mt-20 pb-6 sm:-mt-24">

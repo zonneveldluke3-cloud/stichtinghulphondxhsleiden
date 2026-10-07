@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { QuickFacts } from "@/components/sections/QuickFacts";
 import { About } from "@/components/sections/About";
+import { Levels } from "@/components/sections/Levels";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Registration } from "@/components/sections/Registration";
 import { AboutUs } from "@/components/sections/AboutUs";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <QuickFacts />
         <About />
+        <Levels />
         <HowItWorks />
         <Registration />
         <Donate />

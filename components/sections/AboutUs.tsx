@@ -22,7 +22,7 @@ export function AboutUs() {
               alt={organisation.schoolLogo.alt}
               width={organisation.schoolLogo.width}
               height={organisation.schoolLogo.height}
-              className="h-20 w-auto sm:h-24"
+              className="h-16 w-auto sm:h-20"
             />
           ) : (
             // Tijdelijk tot het echte logo in /public/logos staat (zie config/event.ts)

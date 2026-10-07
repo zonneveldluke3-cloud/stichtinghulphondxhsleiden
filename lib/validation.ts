@@ -24,7 +24,16 @@ function fieldSchema(field: FieldDef) {
     });
 
   if (field.required) {
-    schema = schema.min(1, { error: `${field.label} is verplicht.` });
+    schema = schema.min(1, {
+      error: field.type === "select" ? `Kies het ${field.label.toLowerCase()}.` : `${field.label} is verplicht.`,
+    });
+  }
+
+  if (field.type === "select") {
+    const allowed = (field.options ?? []).map((o) => o.value);
+    return schema.refine((v) => (v === "" && !field.required) || allowed.includes(v), {
+      error: `Kies een ${field.label.toLowerCase()}.`,
+    });
   }
 
   if (field.type === "email") {

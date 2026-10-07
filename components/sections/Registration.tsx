@@ -10,7 +10,7 @@ export function Registration() {
           <Eyebrow>Inschrijven</Eyebrow>
           <SectionTitle>Schrijf je team in</SectionTitle>
           <p className="mt-5 text-lg text-ink/65">
-            Binnen twee minuten geregeld. Inschrijven kan tot {event.registrationDeadline}.
+            Binnen twee minuten geregeld. Inschrijven kan tot en met {event.registrationDeadline}, zolang er plek is.
           </p>
         </div>
         <RegistrationForm />

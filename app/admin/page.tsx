@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Section";
 import { isAdmin } from "@/lib/admin-auth";
 import { getAdminPassword, ADMIN_PASSWORD_MIN_LENGTH } from "@/lib/env";
 import { formatEuro } from "@/lib/format";
+import { LEVELS } from "@/config/registration";
 import { paymentReference } from "@/lib/payments";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { logout } from "./actions";
@@ -25,7 +26,7 @@ interface AdminRow {
   payment_status: string;
   paid_at: string | null;
   created_at: string;
-  teams: { team_name: string; contact_name: string; email: string }[] | null;
+  teams: { team_name: string; contact_name: string; email: string; extra_fields: Record<string, string> | null }[] | null;
 }
 
 const dateFmt = new Intl.DateTimeFormat("nl-NL", {
@@ -68,7 +69,7 @@ export default async function AdminPage(props: PageProps<"/admin">) {
   const { data, error } = await getSupabaseAdmin()
     .from("registrations")
     .select(
-      "id, contact_name, email, phone, number_of_teams, total_amount, payment_status, paid_at, created_at, teams(team_name, contact_name, email, created_at)",
+      "id, contact_name, email, phone, number_of_teams, total_amount, payment_status, paid_at, created_at, teams(team_name, contact_name, email, extra_fields, created_at)",
     )
     .order("created_at", { ascending: false })
     .order("created_at", { referencedTable: "teams", ascending: true });
@@ -182,6 +183,11 @@ export default async function AdminPage(props: PageProps<"/admin">) {
                         {(r.teams ?? []).map((t, i) => (
                           <li key={i} className="text-sm">
                             <span className="font-semibold">{t.team_name}</span>
+                            {t.extra_fields?.level && (
+                              <span className="ml-2 rounded-full bg-sand px-2 py-0.5 text-xs font-bold text-court">
+                                {LEVELS.find((l) => l.value === t.extra_fields?.level)?.label ?? t.extra_fields.level}
+                              </span>
+                            )}
                             <span className="block text-xs text-ink/55">
                               {t.contact_name} · {t.email}
                             </span>

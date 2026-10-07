@@ -15,7 +15,8 @@ export default function TermsPage() {
           <li>Je schrijft één of meerdere teams in via het formulier op deze website.</li>
           <li>Een team bestaat uit {event.playersPerTeam}.</li>
           <li>Een inschrijving is definitief zodra de betaling is ontvangen.</li>
-          <li>Inschrijven kan tot {event.registrationDeadline} of zolang er plekken beschikbaar zijn.</li>
+          <li>Inschrijven kan tot en met {event.registrationDeadline}, zolang er plekken beschikbaar zijn.</li>
+          <li>Per team kies je een niveau. De organisatie deelt de poules in op niveau en mag een team zo nodig in een andere poule plaatsen.</li>
         </ul>
       </section>
 
